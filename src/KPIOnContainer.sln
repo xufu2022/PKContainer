@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D3DE3CEA-ACA5-4759-9ABF-EA5C281331A1}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{75AC5E8D-43F5-4005-AD10-741917705244}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{C8128622-8B2B-4BEA-ABE1-F298330C8936}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1E948A5A-BED9-4052-9EDF-F8515C78F278}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{206D38AA-A001-4ED3-8ABC-2A6D18E936EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6CF8DF1A-7908-487C-9466-A911694BC63D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EA8E7243-1068-4746-8C74-CFB0345AC35D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KPIWeb", "Web\KPIWeb\KPIWeb.csproj", "{A8F4BA7F-2C06-4964-B169-33C0A4EFE3B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8F4BA7F-2C06-4964-B169-33C0A4EFE3B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8F4BA7F-2C06-4964-B169-33C0A4EFE3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8F4BA7F-2C06-4964-B169-33C0A4EFE3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8F4BA7F-2C06-4964-B169-33C0A4EFE3B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75AC5E8D-43F5-4005-AD10-741917705244} = {6CF8DF1A-7908-487C-9466-A911694BC63D}
+		{C8128622-8B2B-4BEA-ABE1-F298330C8936} = {6CF8DF1A-7908-487C-9466-A911694BC63D}
+		{1E948A5A-BED9-4052-9EDF-F8515C78F278} = {6CF8DF1A-7908-487C-9466-A911694BC63D}
+		{206D38AA-A001-4ED3-8ABC-2A6D18E936EA} = {6CF8DF1A-7908-487C-9466-A911694BC63D}
+		{A8F4BA7F-2C06-4964-B169-33C0A4EFE3B5} = {206D38AA-A001-4ED3-8ABC-2A6D18E936EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42BB77C9-BBAD-4999-AB2C-2C8EE8A8D200}
+	EndGlobalSection
+EndGlobal
