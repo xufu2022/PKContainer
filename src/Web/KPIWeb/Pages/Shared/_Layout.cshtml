@@ -3,49 +3,182 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - KPIWeb</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/KPIWeb.styles.css" asp-append-version="true" />
+    <title>@ViewData["Title"] - KPI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#009ab2" />
+
+    <script type='text/javascript'
+            src='https://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario&key=AjliRh91FSXghrNGqqRfQE9qiaGorkT2EiMCDLBA0pXk8RoHgqlduiBYndWR0xi3'
+            async defer></script>
+
+
+    @if (IsSectionDefined("Styles"))
+    {
+        @await RenderSectionAsync("Styles", required: false)
+    }
+
+    <link rel="stylesheet" href="~/extlibs/bootstrap/dist/css/bootstrap.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/extlibs/summernote/summernote.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/extlibs/summernote/summernote-bs4.css" asp-append-version="true" />
+
+    <environment names="Development">
+        <link rel="shortcut icon" href="https://cdn-test.incommunities.co.uk/img/favicons/kpi/favicon.svg" />
+
+        <link rel="stylesheet" href="https://cdn-test.incommunities.co.uk/dist/css/systems/kpi/styles.css"
+              asp-append-version="true" />
+        @* <link rel="stylesheet" href="https://localhost:44345/dist/css/systems/kpi/styles.css"
+            asp-append-version="true" /> *@
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </environment>
+
+    <environment names="Test">
+        <link rel="shortcut icon" href="https://cdn-test.incommunities.co.uk/img/favicons/kpi/favicon.svg" />
+
+        <link rel="stylesheet" href="https://cdn-test.incommunities.co.uk/dist/css/systems/kpi/styles.css"
+              asp-append-version="true" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </environment>
+
+    <environment names="Staging">
+        <link rel="shortcut icon" href="https://cdn-stage.incommunities.co.uk/img/favicons/kpi/favicon.svg" />
+
+        <link rel="stylesheet" href="https://cdn-stage.incommunities.co.uk/dist/css/systems/kpi/styles.css"
+              asp-append-version="true" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </environment>
+
+    <environment names="Production">
+        <link rel="shortcut icon" href="https://cdn.incommunities.co.uk/img/favicons/kpi/favicon.svg" />
+
+        <link rel="stylesheet" href="https://cdn.incommunities.co.uk/dist/css/systems/kpi/styles.css"
+              asp-append-version="true" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </environment>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+    <script>
+        if (typeof jQuery !== 'function') {
+            document.write('<script src="https://cdn-test.incommunities.co.uk/js/hosted-libraries/jQuery/jquery-3.4.1.min.js"><\/script>');
+        }
+
+        if (typeof axios !== 'function') {
+            document.write('<script src="https://cdn-test.incommunities.co.uk/js/hosted-libraries/axios/axios-0.19.0.min.js"><\/script>');
+        }
+
+        if (typeof Popper !== 'function') {
+            document.write('<script src="https://cdn-test.incommunities.co.uk/js/hosted-libraries/popper/popper-1.14.7.min.js"><\/script>');
+        }
+    </script>
+
+    <script>
+        if (typeof ($.fn.modal) === 'undefined') {
+            document.write('<script src="https://cdn-test.incommunities.co.uk/js/hosted-libraries/bootstrap/bootstrap-4.3.1.min.js"><\/script>');
+        }
+    </script>
+
+    <script src="~/extlibs/jquery-validation/jquery.validate.js" asp-append-version="true"></script>
+    <script src="~/extlibs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+            asp-append-version="true"></script>
+    <script src="~/extlibs/bootstrap-input-mask/js/bootstrap-input-mask.js" asp-append-version="true"></script>
+    <script src="~/extlibs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/extlibs/toastr/js/toastr.js" asp-append-version="true"></script>
+    <script src="~/extlibs/moment/moment.js" asp-append-version="true"></script>
+
+    <script src="~/extlibs/footable/js/footable.js" asp-append-version="true"></script>
+    <script src="~/extlibs/dropzone/dropzone.js" asp-append-version="true"></script>
+    <script src="~/extlibs/summernote/summernote.min.js" asp-append-version="true"></script>
+    <script src="~/extlibs/select2/js/select2.full.js" asp-append-version="true"></script>
+    <script src="~/extlibs/sweetAlert2/js/sweetAlert2.js" asp-append-version="true"></script>
+
+    <script src="~/extlibs/typehead/bootstrap3-typeahead.min.js" asp-append-version="true"></script>
+    <script src="~/extlibs/underscore/underscore.min.js" asp-append-version="true"></script>
+    <script src="~/extlibs/jquery-mask/jquery.mask.js" asp-append-version="true"></script>
+
+    <script src="~/js/shared/crmGlobal.js" asp-append-version="true"></script>
+    <script src="~/js/shared/site.js" asp-append-version="true"></script>
+    <script src="~/js/shared/grid.js" asp-append-version="true"></script>
+    <script src="~/js/shared/appSetting.js" asp-append-version="true"></script>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">KPIWeb</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+
+<body class="kpi">
+    <div class="desktop-only desktop-only-navigation">
+        <aside class="nav-container" aria-label="KPI">
+            <button type="button" class="skip-to-content">Skip to content</button>
+            @await Html.PartialAsync("_Navigation")
+        </aside>
+
+    </div>
+
+
+    <main>
+        @Html.AntiForgeryToken()
+
+        <partial name="_TopNavbar" />
+
+        @RenderBody()
+
+    </main>
+
+    <section class="mobile-navigation-overlay"></section>
+    @*
+        <partial name="_TaskManagerPanel" />
+
+        <partial name="_Loader" />*@
+
+    <partial name="_SVG" />
+
+    @await RenderSectionAsync("Scripts", required: false)
+    @if (IsSectionDefined("RMSScripts"))
+    {
+        @await RenderSectionAsync("RMSScripts", required: false)
+    }
+
+    <environment names="Development">
+        <script src="https://cdn-test.incommunities.co.uk/js/global.js" asp-append-version="true"></script>
+        <script src="https://cdn-test.incommunities.co.uk/js/ripple.js" asp-append-version="true"></script>
+        <script src="https://cdn-test.incommunities.co.uk/js/tabs.js" asp-append-version="true"></script>
+        <script src="https://cdn-test.incommunities.co.uk/js/jquery.browser.js" asp-append-version="true"></script>
+        <script src="https://cdn-test.incommunities.co.uk/js/user.Tabbing.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Test">
+        <script src="https://cdn-test.incommunities.co.uk/js/global.js" asp-append-version="true"></script>
+        <script src="https://cdn-test.incommunities.co.uk/js/ripple.js" asp-append-version="true"></script>
+        <script src="https://cdn-test.incommunities.co.uk/js/tabs.js" asp-append-version="true"></script>
+        <script src="https://cdn-test.incommunities.co.uk/js/jquery.browser.js" asp-append-version="true"></script>
+        <script src="https://cdn-test.incommunities.co.uk/js/user.Tabbing.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging">
+        <script src="https://cdn-stage.incommunities.co.uk/js/global.js" asp-append-version="true"></script>
+        <script src="https://cdn-stage.incommunities.co.uk/js/ripple.js" asp-append-version="true"></script>
+        <script src="https://cdn-stage.incommunities.co.uk/js/tabs.js" asp-append-version="true"></script>
+        <script src="https://cdn-stage.incommunities.co.uk/js/jquery.browser.js" asp-append-version="true"></script>
+        <script src="https://cdn-stage.incommunities.co.uk/js/user.Tabbing.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Production">
+        <script src="https://cdn.incommunities.co.uk/js/global.js" asp-append-version="true"></script>
+        <script src="https://cdn.incommunities.co.uk/js/ripple.js" asp-append-version="true"></script>
+        <script src="https://cdn.incommunities.co.uk/js/tabs.js" asp-append-version="true"></script>
+        <script src="https://cdn.incommunities.co.uk/js/jquery.browser.js" asp-append-version="true"></script>
+        <script src="https://cdn.incommunities.co.uk/js/user.Tabbing.js" asp-append-version="true"></script>
+    </environment>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - KPIWeb - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

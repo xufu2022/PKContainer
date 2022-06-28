@@ -1,0 +1,108 @@
+﻿@using Microsoft.Extensions.Options
+@using KPIWeb.Configurations
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment _hostingEnv
+@inject IOptions<WebApplicationSettings> _webApplicationSettings
+@*@inject ILoginUserService _loginUserService*@
+
+<section class="client-info">
+
+    <section class="client-logo-container">
+        <section class="client-logo">
+            <svg aria-label="KPI Logo" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" fill="url(#pvq3gsegua)" />
+                <path d="M69.531 52.344c-1.563 7.812-7.453 15.169-15.719 16.812A19.53 19.53 0 0 1 35.54 36.87c5.67-6.244 15.241-7.963 23.053-4.838" stroke="#fff" stroke-width="2.344" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="m42.968 49.219 7.813 7.812 18.75-20.312" stroke="#fff" stroke-width="2.344" stroke-linecap="round" stroke-linejoin="round" />
+                <defs>
+                    <linearGradient id="pvq3gsegua" x1="50" y1="0" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#9F1A72" />
+                        <stop offset=".482" stop-color="#343C61" />
+                        <stop offset="1" stop-color="#0C98AE" stop-opacity=".92" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <label>
+                KPI Reporting @_webApplicationSettings.Value.EnvironmentName
+            </label>
+        </section>
+    </section>
+
+    <section class="client-overlay-image">
+        <section class="client-overlay"></section>
+        <section class="client-image"></section>
+    </section>
+
+</section>
+
+<nav role="navigation">
+    <ul>
+        <li class="has-tooltip">
+            <a class="has-ripple" href="@Url.Action("Index", "Index", new {Area = string.Empty})">
+                <svg aria-label="User Icon">
+                    <use href="#user"></use>
+                </svg>
+
+                <span class="flex-1">
+                    KPI Dashboard
+                </span>
+            </a>
+
+            <span class="tooltip right">
+                Menu 1
+            </span>
+        </li>
+
+        @if (User.IsInRole("Developer"))
+        {
+            <li class="has-tooltip">
+                <button class="has-ripple has-dropdown" type="button" onclick="navigationDropdown(this)">
+                    <svg aria-label="Server Icon">
+                        <use href="#server"></use>
+                    </svg>
+
+                    <span class="flex-1">
+                        Server Information
+                    </span>
+
+                    <svg aria-label="Dropdown Arrow Icon">
+                        <use href="#dropdown-arrow"></use>
+                    </svg>
+                </button>
+
+                <ul>
+                    <li>
+                        <p>
+                            <span class="bold">Server:</span> @Environment.MachineName
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="bold">Version:</span> __Build.BuildNumber__
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="bold">Build Date:</span> __System.Pipelinestarttime__
+                        </p>
+                    </li>
+                </ul>
+
+                <span class="tooltip right">
+                    Server Information
+                </span>
+
+            </li>
+        }
+    </ul>
+</nav>
+
+<environment names="Test, Staging">
+    <div class="system-indicator has-tooltip" tabindex="0">
+        <svg aria-label="System Alert Icon">
+            <use href="#exclamation-mark-icon"></use>
+        </svg>
+
+        <span class="tooltip top left">
+            You are currently viewing Test
+        </span>
+    </div>
+</environment>

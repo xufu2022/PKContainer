@@ -1,0 +1,165 @@
+﻿@using Microsoft.Extensions.Options
+@using KPIWeb.Configurations
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment _hostingEnv
+@inject IOptions<WebApplicationSettings> _webApplicationSettings
+@*@inject ILoginUserService _loginUserService
+
+    @{
+        var user = _loginuserservice.getcurrentuser();
+        var name = $"{user.claims.firstordefault(x => x.type == "name")?.value}";
+    }*@
+
+<header class="site-header">
+    <button class="desktop-navigation-toggle desktop-only" onclick="desktopNavigationToggle();saveDesktopNavigationState();" aria-label="Toggle Navigation">
+        <svg aria-label="Menu Icon">
+            <use href="#menu"></use>
+        </svg>
+    </button>
+
+    <button class="mobile-navigation-toggle tablet-only" onclick="mobileNavigationToggle();" aria-label="Toggle Navigation">
+        <svg aria-label="Menu Icon">
+            <use href="#menu"></use>
+        </svg>
+    </button>
+
+    <div class="user-container">
+        <button class="has-notifications red" onclick="taskManagerPanelToggle();">
+            <svg>
+                <use href="#bell-icon"></use>
+            </svg>
+        </button>
+
+        <div class="app-actions" id="appActions">
+            <button class="apps has-tooltip has-ripple" ref="button" v-on:click="showActions = !showActions" aria-label="Additional Web Applications Tray">
+                <svg aria-label="App Draw Icon">
+                    <use href="#apps"></use>
+                </svg>
+            </button>
+
+            <ul v-bind:class="{active: showActions}" v-closable="{ exclude: ['button'], handler: 'onClose' }">
+                <li>
+                    <button onclick="openApp('@_webApplicationSettings.Value.AssetUrl','Assets',null)" aria-label="Open Assets Web Application">
+                        <svg aria-label="Assets Logo">
+                            <use href="#assets-logo"></use>
+                        </svg>
+
+                        <span>
+                            Assets
+                        </span>
+                    </button>
+                </li>
+
+                <li>
+                    <a href="https://incommunities.betteroff.org.uk/#/home" target="_blank" aria-label="Open Better Off Website">
+                        <svg aria-label="Better Off Logo">
+                            <use href="#better-off-logo"></use>
+                        </svg>
+
+                        <span>
+                            Better Off
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <button onclick="openApp('@_webApplicationSettings.Value.DebtAssistUrl','Debt Assist', null)" aria-label="Open Debt Assist Web Application">
+                        <svg aria-label="Debt Assist Logo">
+                            <use href="#debt-assist-logo"></use>
+                        </svg>
+
+                        <span>
+                            Debt Assist
+                        </span>
+                    </button>
+                </li>
+
+                <li>
+                    <button onclick="openApp('@_webApplicationSettings.Value.TaskManagerUrl','Task Manager', null)" aria-label="Open Task Manager Web Application">
+                        <svg aria-label="Task Manager Logo">
+                            <use href="#task-manager-logo"></use>
+                        </svg>
+
+                        <span>
+                            Task Manager
+                        </span>
+                    </button>
+                </li>
+
+                <li>
+                    <button onclick="openApp('@_webApplicationSettings.Value.VblUrl','VBL',null)" aria-label="Open VBL Web Application">
+                        <svg aria-label="VBL Logo">
+                            <use href="#vbl-logo"></use>
+                        </svg>
+
+                        <span>
+                            VBL
+                        </span>
+                    </button>
+                </li>
+
+                <li>
+                    <button onclick="openApp('@_webApplicationSettings.Value.CloudVoidsUrl','Voids',null)" aria-label="Open Voids Web Application">
+                        <svg aria-label="Voids Logo">
+                            <use href="#voids-logo"></use>
+                        </svg>
+
+                        <span>
+                            Voids
+                        </span>
+                    </button>
+                </li>
+
+                <li>
+                    <button onclick="openApp('@_webApplicationSettings.Value.KPIUrl','KPI',null)" aria-label="Open KPI Web Application">
+                        <svg aria-label="KPI Logo">
+                            <use href="#kpi-logo"></use>
+                        </svg>
+
+                        <span>
+                            KPI
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                let userName = "Mamadu";
+                let firstLetter = userName.charAt(0).toLowerCase();
+                let userNameIcon = document.getElementById("userNameIcon");
+
+                userNameIcon.classList.add("name-" + firstLetter);
+            });
+        </script>
+
+        <div class="user-actions" id="userActions">
+            <button class="user has-tooltip" ref="button" v-on:click="showActions = !showActions" id="userNameIcon" aria-label="User Actions Tray">
+                <div class="icon has-ripple"></div>
+            </button>
+
+            <ul v-bind:class="{active: showActions}" v-closable="{ exclude: ['button'], handler: 'onClose' }">
+                <li>
+
+                    <p>
+                        You are currently logged in as:
+                    </p>
+
+                    <p>
+                        <span class="bold">
+                            Mamadu
+                        </span>
+                    </p>
+                    
+                    <a asp-action="Logout" asp-controller="Home" class="button tertiary has-ripple full-width">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</header>

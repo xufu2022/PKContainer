@@ -1,6 +1,10 @@
+using KPIWeb.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.Configure<HttpClientSettings>(builder.Configuration.GetSection("HttpClientSettings"));
+builder.Services.Configure<WebApplicationSettings>(builder.Configuration.GetSection("WebApplicationSettings"));
 builder.Services.AddRazorPages();
 
 var app = builder.Build();

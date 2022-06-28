@@ -40,15 +40,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serilog", "Serilog", "{FDD3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swashbuckle", "Swashbuckle", "{11028AF4-074A-4E2A-86F2-665944738737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.AutoMapper", "BuildingBlocks\KP.AutoMapper\KP.AutoMapper\KP.AutoMapper.csproj", "{7D3B5B72-5D01-48EF-8D3D-54B38E97E0EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.AutoMapper", "BuildingBlocks\KP.AutoMapper\KP.AutoMapper\KP.AutoMapper.csproj", "{7D3B5B72-5D01-48EF-8D3D-54B38E97E0EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.BackgroundJobs", "BuildingBlocks\KP.BackgroundJobs\KP.BackgroundJobs\KP.BackgroundJobs.csproj", "{2006F3F1-8FF7-4929-9176-807561661F4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.BackgroundJobs", "BuildingBlocks\KP.BackgroundJobs\KP.BackgroundJobs\KP.BackgroundJobs.csproj", "{2006F3F1-8FF7-4929-9176-807561661F4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.HttpClient", "BuildingBlocks\KP.HttpClient\KP.HttpClient\KP.HttpClient.csproj", "{EFA872EA-AACF-439F-BD47-672F812E5783}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.HttpClient", "BuildingBlocks\KP.HttpClient\KP.HttpClient\KP.HttpClient.csproj", "{EFA872EA-AACF-439F-BD47-672F812E5783}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.Serilog", "BuildingBlocks\KP.Serilog\KP.Serilog\KP.Serilog.csproj", "{11D82EC0-22B8-4550-9224-C7BAD82746E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.Serilog", "BuildingBlocks\KP.Serilog\KP.Serilog\KP.Serilog.csproj", "{11D82EC0-22B8-4550-9224-C7BAD82746E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.Swashbuckle", "BuildingBlocks\KP.Swashbuckle\KP.Swashbuckle\KP.Swashbuckle.csproj", "{B7DDB7E8-62D8-4C03-A4F1-334FE760E484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.Swashbuckle", "BuildingBlocks\KP.Swashbuckle\KP.Swashbuckle\KP.Swashbuckle.csproj", "{B7DDB7E8-62D8-4C03-A4F1-334FE760E484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPRazor", "Web\KPRazor\KPRazor.csproj", "{F82A2FA3-F1FA-4169-AA55-96AABB363985}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +94,10 @@ Global
 		{B7DDB7E8-62D8-4C03-A4F1-334FE760E484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7DDB7E8-62D8-4C03-A4F1-334FE760E484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7DDB7E8-62D8-4C03-A4F1-334FE760E484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82A2FA3-F1FA-4169-AA55-96AABB363985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82A2FA3-F1FA-4169-AA55-96AABB363985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82A2FA3-F1FA-4169-AA55-96AABB363985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82A2FA3-F1FA-4169-AA55-96AABB363985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,6 +122,7 @@ Global
 		{EFA872EA-AACF-439F-BD47-672F812E5783} = {94568D43-484A-484C-A212-580F33F76544}
 		{11D82EC0-22B8-4550-9224-C7BAD82746E9} = {FDD323EB-E141-45D9-9C4A-AF26B2B3A4A4}
 		{B7DDB7E8-62D8-4C03-A4F1-334FE760E484} = {11028AF4-074A-4E2A-86F2-665944738737}
+		{F82A2FA3-F1FA-4169-AA55-96AABB363985} = {206D38AA-A001-4ED3-8ABC-2A6D18E936EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42BB77C9-BBAD-4999-AB2C-2C8EE8A8D200}
