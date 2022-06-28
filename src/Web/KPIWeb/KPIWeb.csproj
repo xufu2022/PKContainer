@@ -2,8 +2,7 @@
 
   <PropertyGroup>
 	  <TargetFramework>$(DefaultTargetFramework)</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
 </Project>
