@@ -2,9 +2,35 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="kpi-home">
+
+    <h1>
+        KPI THEMES
+    </h1>
+
+    <div class="content">
+
+        <form role="form" asp-controller="Kpi" asp-action="KpiSave" autocomplete="off" id="accessible-content-skip-anchor">
+
+            <div class="begin-search-prompt">
+
+                <div class="empty-state">
+
+                    @* <figure>
+                            <svg aria-label="User Icon">
+                                <use href="#user"></use>
+                            </svg>
+                        </figure>*@
+
+                    <partial name="_KPIThemes" model=@Model.KpiViewModel  />
+
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</section>

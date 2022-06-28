@@ -1,4 +1,6 @@
-﻿namespace KPIWeb.Services.Interfaces
+﻿using KPIWeb.DTO;
+
+namespace KPIWeb.Services.Interfaces
 {
     public interface IMeasureTypeService
     {

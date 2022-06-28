@@ -1,0 +1,56 @@
+﻿@model KPIWeb.Models.KPIViewModel
+
+@{
+    ViewData["Title"] = "Components";
+}
+
+<div class="content">
+    <div class="content-container">
+        <div class="has-padding">
+            <div class="has-accordion" id="kpiThemes">
+
+                @foreach (var theme in @Model.Themes)
+                {
+                    <article>
+                        <button class="title" onclick="accordionToggle(this)" type="button">
+                            <div class="information">
+                                <h3 id="@theme.Id">
+                                    @theme.Name
+                                </h3>
+                            </div>
+
+                            <svg>
+                                <use href="#dropdown-arrow"></use>
+                            </svg>
+                        </button>
+                        @foreach (var measure in theme.Measures)
+                        {
+                            if (@theme.Id == @measure.ThemeId)
+                            {
+                                <div class="has-content">
+                                    <section class="content">
+                                        <div>
+                                            <nav id="@measure.Id" class="page-tabs">
+                                                <ul class="placeholder-elements">
+                                                    <li class="accordion">
+                                                        <button id="@measure.Id" name="@measure.Name" type="button" style="cursor:pointer" onclick="displayMeasures(this)">
+                                                            @measure.Name
+                                                        </button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </section>
+                                </div>
+                            }
+                        }
+                    </article>
+                }
+            </div>
+           @* <div id="measureInput" hidden>
+                <partial name="_MeasureInputs" />
+            </div>*@
+        </div>
+    </div>
+</div>
+@*<script src="~/js/kpi.js"></script>*@
