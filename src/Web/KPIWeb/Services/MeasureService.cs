@@ -31,7 +31,7 @@ namespace KPIWeb.Services
         }
 
         public async Task<List<MeasureDto>> GetMeasures() => await GetItem<List<MeasureDto>>("Measure");
-
+        public async Task<MeasureDto> GetById(int id) => await GetItem<MeasureDto>($"Measure/{id}");
 
     }
 }

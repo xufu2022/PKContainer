@@ -1,0 +1,98 @@
+﻿@page "/kpi/addKpi/{id:int}"
+@model KPIWeb.Pages.Kpi.AddKpiModel
+
+<div class="has-data">
+    <div class="has-padding">
+
+        <form role="form" method="post" autocomplete="off" id="measureInput">
+            <input asp-for="KpiDto.MeasureId" type="hidden" id="MeasureId" />
+            <input asp-for="KpiDto.UnitsOfMeasureId" type="hidden" id="UnitsOfMeasureId" />
+            <div class="data">
+                <fieldset>
+                    <div class="has-padding">
+                        <div class="data has-flex-inputs">
+                            <h3 class="measureType">
+                                @Model.MeasureName
+                            </h3>
+                            <div class="flex-inputs">
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.Lead"></label>
+                                    <input asp-for="KpiDto.Lead" type="text" required />
+                                    <span asp-validation-for="KpiDto.Lead" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.ActualClosingPositionStartDate"></label>
+                                    <input asp-for="KpiDto.ActualClosingPositionStartDate" type="date" required />
+                                    <span asp-validation-for="KpiDto.ActualClosingPositionStartDate" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.ActualClosingPositionEndDate"></label>
+                                    <input asp-for="KpiDto.ActualClosingPositionEndDate" type="date" required />
+                                    <span asp-validation-for="KpiDto.ActualClosingPositionEndDate" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.ActualClosingPositionStartValue"></label>
+                                    <input asp-for="KpiDto.ActualClosingPositionStartValue" type="text" required />
+                                    <span asp-validation-for="KpiDto.ActualClosingPositionStartValue" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.ActualClosingPositionEndValue"></label>
+                                    <input asp-for="KpiDto.ActualClosingPositionEndValue" type="text" required />
+                                    <span asp-validation-for="KpiDto.ActualClosingPositionEndValue" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.ActualYtdprevious"></label>
+                                    <input asp-for="KpiDto.ActualYtdprevious" type="text" required />
+                                    <span asp-validation-for="KpiDto.ActualYtdprevious" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.ActualYtdcurrent"></label>
+                                    <input asp-for="KpiDto.ActualYtdcurrent" type="text" required />
+                                    <span asp-validation-for="KpiDto.ActualYtdcurrent" class="text-danger"></span>
+                                </div>
+
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.TargetDate"></label>
+                                    <input asp-for="KpiDto.TargetDate" type="date" required />
+                                    <span asp-validation-for="KpiDto.TargetDate" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.TargetValue"></label>
+                                    <input asp-for="KpiDto.TargetValue" type="text" required />
+                                    <span asp-validation-for="KpiDto.TargetValue" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.ForecastDate"></label>
+                                    <input asp-for="KpiDto.ForecastDate" type="date" required />
+                                    <span asp-validation-for="KpiDto.ForecastDate" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.ForecastValue"></label>
+                                    <input asp-for="KpiDto.ForecastValue" type="text" required />
+                                    <span asp-validation-for="KpiDto.ForecastValue" class="text-danger"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label asp-for="KpiDto.DirectionsOfTravel.Name"></label>
+                                    <select asp-for="KpiDto.DirectionsOfTravelId" asp-items="Model.DirectionsOfTravelList" ></select>
+                                    <span asp-validation-for="KpiDto.DirectionsOfTravelId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <section class="actions bottom">
+                        <button class="button primary" id="btnCancelMeasureInputDetails" type="button">
+                            Cancel
+                        </button>
+                        <button class="button primary" id="btnResetMeasureInputDetails" type="reset" onclick="return resetMeasureInputForm()">
+                            Reset
+                        </button>
+                        <button class="button primary" type="submit" id="btnSaveMeasureInputDetails">
+                            Save
+                        </button>
+                    </section>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>

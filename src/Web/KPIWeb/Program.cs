@@ -10,6 +10,7 @@ builder.Services.Configure<WebApplicationSettings>(builder.Configuration.GetSect
 builder.Services.AddHttpClient<IKPIApiService, KPIApiService>();
 builder.Services.AddHttpClient<IMeasureService, MeasureService>();
 builder.Services.AddHttpClient<IThemeService, ThemeService>();
+builder.Services.AddHttpClient<IDirectionsOfTravelService, DirectionsOfTravelService>();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddRazorPages().AddRazorPagesOptions(options =>

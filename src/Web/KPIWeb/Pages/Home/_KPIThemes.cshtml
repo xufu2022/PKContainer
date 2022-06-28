@@ -1,4 +1,4 @@
-﻿@model KPIWeb.Models.KPIViewModel
+﻿@model List<ThemeDto>
 
 @{
     ViewData["Title"] = "Components";
@@ -9,7 +9,7 @@
         <div class="has-padding">
             <div class="has-accordion" id="kpiThemes">
 
-                @foreach (var theme in @Model.Themes)
+                @foreach (var theme in Model)
                 {
                     <article>
                         <button class="title" onclick="accordionToggle(this)" type="button">
@@ -33,9 +33,10 @@
                                             <nav id="@measure.Id" class="page-tabs">
                                                 <ul class="placeholder-elements">
                                                     <li class="accordion">
-                                                        <button id="@measure.Id" name="@measure.Name" type="button" style="cursor:pointer" onclick="displayMeasures(this)">
+                                                        @*                                                        <button id="@measure.Id" name="@measure.Name" type="button" style="cursor:pointer" onclick="displayMeasures(this)">
                                                             @measure.Name
-                                                        </button>
+                                                        </button>*@
+                                                        <a asp-page="/kpi/addkpi" asp-route-id="@measure.Id" >@measure.Name</a>
                                                     </li>
                                                 </ul>
                                             </nav>

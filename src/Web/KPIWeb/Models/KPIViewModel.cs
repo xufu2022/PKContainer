@@ -5,12 +5,11 @@ namespace KPIWeb.Models
 {
     public class KPIViewModel
     {
-        public List<StatusDto> Statuses { get; set; }
+        public KpiDto KpiDto { get; set; } = new();
 
-        public List<ThemeDto> Themes { get; set; }
+        public List<SelectListItem> DirectionsOfTravelList { get; set; }=new ();
 
-        public KpiDto kpiModel { get; set; }
-
-        public List<SelectListItem> DirectionsOfTravelList { get; set; }
     }
+
+    
 }
