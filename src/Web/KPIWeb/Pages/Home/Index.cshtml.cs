@@ -1,9 +1,8 @@
-﻿using KPIWeb.DTO;
-using KPIWeb.Models;
+﻿using KPIWeb.Models;
 using KPIWeb.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace KPIWeb.Pages;
+namespace KPIWeb.Pages.Home;
 
 public class IndexModel : PageModel
 {
@@ -31,6 +30,6 @@ public class IndexModel : PageModel
             //Statuses = await _statusService.GetStatuses(),
             //DirectionsOfTravelList = PopulateSelectList(await _directionsOfTravelService.GetAllTravelDirections(), true)
         };
-    
+
     }
 }

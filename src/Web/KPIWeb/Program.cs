@@ -12,7 +12,10 @@ builder.Services.AddHttpClient<IMeasureService, MeasureService>();
 builder.Services.AddHttpClient<IThemeService, ThemeService>();
 builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
+{
+    options.Conventions.AddPageRoute("/home/index","");
+});
 
 var app = builder.Build();
 
