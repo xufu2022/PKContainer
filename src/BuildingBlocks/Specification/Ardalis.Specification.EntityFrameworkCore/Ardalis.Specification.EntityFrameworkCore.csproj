@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
+    <PackageId>Ardalis.Specification.EntityFrameworkCore</PackageId>
+    <Title>Ardalis.Specification.EntityFrameworkCore</Title>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Steve Smith (@ardalis); Scott DePouw; Fati Iseni (@fiseni)</Authors>
+    <Company>Ardalis.com</Company>
+    <PackageProjectUrl>https://github.com/ardalis/specification</PackageProjectUrl>
+    <Description>EF Core plugin package to Ardalis.Specification containing EF Core evaluator and abstract repository.</Description>
+    <Summary>EF Core plugin package to Ardalis.Specification containing EF Core evaluator and abstract repository.</Summary>
+    <RepositoryUrl>https://github.com/ardalis/specification</RepositoryUrl>
+    <PackageTags>spec;specification;repository;ddd;ef;ef core;entity framework;entity framework core</PackageTags>
+    <Version>6.0.6</Version>
+    <PackageReleaseNotes>
+      See README.md
+    </PackageReleaseNotes>
+    <AssemblyName>Ardalis.Specification.EntityFrameworkCore</AssemblyName>
+    <PackageIcon>icon.png</PackageIcon>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <DocumentationFile>bin\$(Configuration)\Ardalis.Specification.EntityFrameworkCore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+	    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
+	    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.6" />
+    </ItemGroup>
+	
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.13" />
+  </ItemGroup>
+
+ 
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ardalis.Specification\Ardalis.Specification.csproj" />
+  </ItemGroup>
+</Project>
