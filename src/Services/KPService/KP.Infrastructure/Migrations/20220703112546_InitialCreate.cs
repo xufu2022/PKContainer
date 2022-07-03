@@ -19,8 +19,8 @@ namespace KP.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ModifiedByName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CreatedByName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ModifiedByName = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -37,8 +37,8 @@ namespace KP.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ModifiedByName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CreatedByName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ModifiedByName = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,8 +55,8 @@ namespace KP.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ModifiedByName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CreatedByName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ModifiedByName = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,8 +73,8 @@ namespace KP.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ModifiedByName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CreatedByName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ModifiedByName = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -91,8 +91,8 @@ namespace KP.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ModifiedByName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CreatedByName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ModifiedByName = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -109,8 +109,8 @@ namespace KP.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ModifiedByName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CreatedByName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ModifiedByName = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -131,8 +131,8 @@ namespace KP.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ModifiedByName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CreatedByName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ModifiedByName = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -142,19 +142,19 @@ namespace KP.Infrastructure.Migrations
                         column: x => x.KpiTypeId,
                         principalTable: "KpiType",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Measure_UnitsOfMeasureId",
+                        column: x => x.UnitsOfMeasureId,
+                        principalTable: "UnitsOfMeasure",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Theme_ThemeId",
                         column: x => x.ThemeId,
                         principalTable: "Theme",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_UnitsOfMeasure_UnitsOfMeasureId",
-                        column: x => x.UnitsOfMeasureId,
-                        principalTable: "UnitsOfMeasure",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -167,11 +167,11 @@ namespace KP.Infrastructure.Migrations
                     Lead = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: true),
                     UnitsOfMeasureId = table.Column<int>(type: "int", nullable: false),
                     ActualClosingPositionStartDate = table.Column<DateTime>(type: "date", nullable: true),
-                    ActualClosingPositionStartValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ActualClosingPositionStartValue = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     ActualClosingPositionEndDate = table.Column<DateTime>(type: "date", nullable: true),
-                    ActualClosingPositionEndValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ActualYTDPrevious = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ActualYTDCurrent = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ActualClosingPositionEndValue = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    ActualYTDPrevious = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    ActualYTDCurrent = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     TargetDate = table.Column<DateTime>(type: "date", nullable: true),
                     TargetValue = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     ForecastDate = table.Column<DateTime>(type: "date", nullable: true),
@@ -181,8 +181,8 @@ namespace KP.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime", nullable: false),
-                    CreatedByName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ModifiedByName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CreatedByName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ModifiedByName = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -192,25 +192,25 @@ namespace KP.Infrastructure.Migrations
                         column: x => x.DirectionsOfTravelId,
                         principalTable: "DirectionsOfTravel",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Measure_MeasureId",
                         column: x => x.MeasureId,
                         principalTable: "Measure",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Status_StatusId",
                         column: x => x.StatusId,
                         principalTable: "Status",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UnitsOfMeasure_UnitsOfMeasureId",
                         column: x => x.UnitsOfMeasureId,
                         principalTable: "UnitsOfMeasure",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -270,10 +270,10 @@ namespace KP.Infrastructure.Migrations
                 name: "KpiType");
 
             migrationBuilder.DropTable(
-                name: "Theme");
+                name: "UnitsOfMeasure");
 
             migrationBuilder.DropTable(
-                name: "UnitsOfMeasure");
+                name: "Theme");
         }
     }
 }

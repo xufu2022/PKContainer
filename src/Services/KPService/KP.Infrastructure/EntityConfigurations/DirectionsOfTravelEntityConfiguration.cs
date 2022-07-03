@@ -52,19 +52,19 @@ internal class MeasureEntityConfiguration : IEntityTypeConfiguration<Measure>
         builder.HasOne(d => d.KpiType)
             .WithMany(p => p.Measures)
             .HasForeignKey(d => d.KpiTypeId)
-            .OnDelete(deleteBehavior: DeleteBehavior.Cascade)
+            .OnDelete(deleteBehavior: DeleteBehavior.Restrict)
             .HasConstraintName("FK_KPIType_KPITypeId");
         builder.HasOne(d => d.Theme)
             .WithMany(p => p.Measures)
             .HasForeignKey(d => d.ThemeId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.Restrict)
             .HasConstraintName("FK_Theme_ThemeId");
 
         builder.HasOne(d => d.UnitsOfMeasure)
             .WithMany(p => p.Measures)
             .HasForeignKey(d => d.UnitsOfMeasureId)
-            .OnDelete(DeleteBehavior.Cascade)
-            .HasConstraintName("FK_UnitsOfMeasure_UnitsOfMeasureId");
+            .OnDelete(DeleteBehavior.Restrict)
+            .HasConstraintName("FK_Measure_UnitsOfMeasureId");
 
     }
 }
@@ -106,25 +106,25 @@ internal class KpiEntityConfiguration : IEntityTypeConfiguration<Kpi>
         builder.HasOne(d => d.DirectionsOfTravel)
             .WithMany(p => p.Kpis)
             .HasForeignKey(d => d.DirectionsOfTravelId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.Restrict)
             .HasConstraintName("FK_DirectionsOfTravel_DirectionsOfTravelId");
 
         builder.HasOne(d => d.Measure)
             .WithMany(p => p.Kpis)
             .HasForeignKey(d => d.MeasureId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.Restrict)
             .HasConstraintName("FK_Measure_MeasureId");
 
         builder.HasOne(d => d.Status)
             .WithMany(p => p.Kpis)
             .HasForeignKey(d => d.StatusId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.Restrict)
             .HasConstraintName("FK_Status_StatusId");
 
         builder.HasOne(d => d.UnitsOfMeasure)
             .WithMany(p => p.Kpis)
             .HasForeignKey(d => d.UnitsOfMeasureId)
-            .OnDelete(DeleteBehavior.Cascade)
+            .OnDelete(DeleteBehavior.Restrict)
             .HasConstraintName("FK_UnitsOfMeasure_UnitsOfMeasureId");
     }
 }

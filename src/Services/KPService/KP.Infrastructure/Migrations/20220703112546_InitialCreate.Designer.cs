@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KP.Infrastructure.Migrations
 {
     [DbContext(typeof(KpiDbContext))]
-    [Migration("20220703003820_InitialCreate")]
+    [Migration("20220703112546_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -44,7 +44,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("ModifiedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -71,25 +71,25 @@ namespace KP.Infrastructure.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("ActualClosingPositionEndValue")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime?>("ActualClosingPositionStartDate")
                         .HasColumnType("date");
 
                     b.Property<string>("ActualClosingPositionStartValue")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ActualYtdCurrent")
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(100)")
                         .HasColumnName("ActualYTDCurrent");
 
                     b.Property<string>("ActualYtdPrevious")
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(100)")
                         .HasColumnName("ActualYTDPrevious");
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime");
@@ -118,7 +118,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("ModifiedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime");
@@ -161,7 +161,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -171,7 +171,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("ModifiedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -199,7 +199,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -212,7 +212,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("ModifiedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -251,7 +251,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -261,7 +261,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("ModifiedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -286,7 +286,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -296,7 +296,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("ModifiedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -321,7 +321,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -331,7 +331,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("ModifiedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -356,7 +356,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -366,7 +366,7 @@ namespace KP.Infrastructure.Migrations
 
                     b.Property<string>("ModifiedByName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -386,28 +386,28 @@ namespace KP.Infrastructure.Migrations
                     b.HasOne("KP.Domain.Entities.DirectionsOfTravel", "DirectionsOfTravel")
                         .WithMany("Kpis")
                         .HasForeignKey("DirectionsOfTravelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("FK_DirectionsOfTravel_DirectionsOfTravelId");
 
                     b.HasOne("KP.Domain.Entities.Measure", "Measure")
                         .WithMany("Kpis")
                         .HasForeignKey("MeasureId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("FK_Measure_MeasureId");
 
                     b.HasOne("KP.Domain.Entities.Status", "Status")
                         .WithMany("Kpis")
                         .HasForeignKey("StatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("FK_Status_StatusId");
 
                     b.HasOne("KP.Domain.Entities.UnitsOfMeasure", "UnitsOfMeasure")
                         .WithMany("Kpis")
                         .HasForeignKey("UnitsOfMeasureId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("FK_UnitsOfMeasure_UnitsOfMeasureId");
 
@@ -425,22 +425,22 @@ namespace KP.Infrastructure.Migrations
                     b.HasOne("KP.Domain.Entities.KpiType", "KpiType")
                         .WithMany("Measures")
                         .HasForeignKey("KpiTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .HasConstraintName("FK_KPIType_KPITypeId");
 
                     b.HasOne("KP.Domain.Entities.Theme", "Theme")
                         .WithMany("Measures")
                         .HasForeignKey("ThemeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("FK_Theme_ThemeId");
 
                     b.HasOne("KP.Domain.Entities.UnitsOfMeasure", "UnitsOfMeasure")
                         .WithMany("Measures")
                         .HasForeignKey("UnitsOfMeasureId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_UnitsOfMeasure_UnitsOfMeasureId");
+                        .HasConstraintName("FK_Measure_UnitsOfMeasureId");
 
                     b.Navigation("KpiType");
 

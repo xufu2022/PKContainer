@@ -1,5 +1,8 @@
 # PKContainer
 
+dotnet ef database update -p .\Services\KPService\KP.Infrastructure -s .\Services\KPService\KP.API
+dotnet ef migrations add InitialCreate -p .\Services\KPService\KP.Infrastructure -s .\Services\KPService\KP.API
+
 [System.Environment]::SetEnvironmentVariable('ResourceGroup','AZ_Resource_Group')
 
 can use this to simplify the context factory for connectionstring
