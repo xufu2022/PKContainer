@@ -1,6 +1,6 @@
 ﻿namespace KP.SharedKernel
 {
-    public abstract class BaseModelDto
+    public abstract record class BaseModelDto
     {
         public int Id { get; set; }
     }
