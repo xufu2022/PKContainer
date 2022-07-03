@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using KP.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿
 
 namespace KP.Infrastructure.Services
 {

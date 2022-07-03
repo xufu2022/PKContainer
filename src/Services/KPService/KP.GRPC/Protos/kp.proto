@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "KP.GRPC.Protos";
+
+import "google/protobuf/empty.proto";
+
+service ThemeService{
+	rpc GetAll(google.protobuf.Empty) returns (stream ThemeReply){}
+	rpc Get(ThemeIdRequest) returns (ThemeReply) {}
+}
+message ThemeIdRequest {
+	int32 Id = 1;
+}
+message ThemeReply {
+	int32 Id = 1;
+	string Name = 2;
+	repeated MeasureReply Measures = 3;
+}
+
+message MeasureReply {
+	int32 Id = 1;
+	string Name = 2;
+}

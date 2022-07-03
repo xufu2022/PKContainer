@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KP.Infrastructure.Services;
-using KP.SharedKernel.Configuration;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+﻿
 
 namespace KP.Infrastructure.Configuration;
 
@@ -42,7 +34,9 @@ public static class ServiceRegistration
         });
 
         services.AddAutoMapper(typeof(MappingProfile).Assembly);
+
         services.AddScoped(typeof(IDirectionsOfTravelService), typeof(DirectionsOfTravelService));
+        services.AddScoped(typeof(IThemeService), typeof(ThemeService));
         return services;
     }
 }
