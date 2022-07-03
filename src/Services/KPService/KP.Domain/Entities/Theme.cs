@@ -1,10 +1,9 @@
-﻿namespace KP.Domain.Entities
+﻿namespace KP.Domain.Entities;
+
+public partial class Theme : BaseEntity
 {
-    public partial class Theme : BaseEntity
-    {
-        public string Name { get; set; } = "";
+    public string Name { get; set; } = "";
 
 
-        public virtual ICollection<Measure> Measures { get; set; } = new HashSet<Measure>();
-    }
+    public virtual ICollection<Measure> Measures { get; set; } = new HashSet<Measure>();
 }

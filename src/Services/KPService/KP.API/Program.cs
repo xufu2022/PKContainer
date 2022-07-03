@@ -1,6 +1,19 @@
+using KP.Infrastructure.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddUserSecrets<Program>();
+    //TODO:
+    //IdentityModelEventSource.ShowPII = true;
+}
+var connectionString1 = Environment.GetEnvironmentVariable("KpConnection");
+string connectionString = builder.Configuration.GetConnectionString("KpConnection");
+builder.Services.AddInfrastructure(connectionString, builder.Environment.IsDevelopment());
 // Add services to the container.
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

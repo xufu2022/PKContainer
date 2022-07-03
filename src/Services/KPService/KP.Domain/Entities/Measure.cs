@@ -12,13 +12,14 @@
         public KpiType? KpiType { get; set; }
         public Theme Theme { get; set; }
         public ICollection<Kpi> Kpis { get; set; } = new HashSet<Kpi>();
-
-        public Measure(Theme theme)
+        public UnitsOfMeasure UnitsOfMeasure { get; set; }
+        public Measure(Theme theme, UnitsOfMeasure unitsOfMeasure)
         {
             Theme = theme;
+            UnitsOfMeasure = unitsOfMeasure;
         }
 
-        private Measure():this(null!)
+        private Measure():this(null!, null!)
         {
         }
     }

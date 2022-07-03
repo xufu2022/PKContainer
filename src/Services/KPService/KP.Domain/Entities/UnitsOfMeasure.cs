@@ -1,9 +1,9 @@
-﻿namespace KP.Domain.Entities
-{
-    public partial class UnitsOfMeasure : BaseEntity
-    {
-        public string Name { get; set; } = "";
+﻿namespace KP.Domain.Entities;
 
-        public virtual ICollection<Kpi> Kpis { get; set; } = new HashSet<Kpi>();
-    }
+public partial class UnitsOfMeasure : BaseEntity
+{
+    public string Name { get; set; } = "";
+
+    public ICollection<Kpi> Kpis { get; set; } = new HashSet<Kpi>();
+    public ICollection<Measure> Measures { get; set; } = new HashSet<Measure>();
 }

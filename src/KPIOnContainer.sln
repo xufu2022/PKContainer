@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D3DE3CEA-ACA5-4759-9ABF-EA5C281331A1}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet.config = NuGet.config
+		Directory.Build.props = Directory.Build.props
+		..\NuGet.config = ..\NuGet.config
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{75AC5E8D-43F5-4005-AD10-741917705244}"
@@ -52,19 +54,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.Swashbuckle", "BuildingB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KPRazor", "Web\KPRazor\KPRazor.csproj", "{F82A2FA3-F1FA-4169-AA55-96AABB363985}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.API", "Services\KPService\KP.API\KP.API.csproj", "{6803C886-8AD4-4F73-990C-2ABB568695B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.API", "Services\KPService\KP.API\KP.API.csproj", "{6803C886-8AD4-4F73-990C-2ABB568695B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.Domain", "Services\KPService\KP.Domain\KP.Domain.csproj", "{EF73291B-3A81-4513-AADA-35A4B99C74DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.Domain", "Services\KPService\KP.Domain\KP.Domain.csproj", "{EF73291B-3A81-4513-AADA-35A4B99C74DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.Infrastructure", "Services\KPService\KP.Infrastructure\KP.Infrastructure.csproj", "{80E9274D-FDFA-432A-853B-C8C8CDED2B59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.Infrastructure", "Services\KPService\KP.Infrastructure\KP.Infrastructure.csproj", "{80E9274D-FDFA-432A-853B-C8C8CDED2B59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.SharedKernel", "Services\KPService\KP.SharedKernel\KP.SharedKernel.csproj", "{294627B3-3437-4B68-959A-183E7A56C459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.SharedKernel", "Services\KPService\KP.SharedKernel\KP.SharedKernel.csproj", "{294627B3-3437-4B68-959A-183E7A56C459}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KPServices", "KPServices", "{D7DD18F7-EA4B-495C-94A6-B74ED67862EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.UnitTests", "Services\KPService\KP.UnitTests\KP.UnitTests.csproj", "{6AA085AF-EAD1-4CE8-AD10-06DDE431F504}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.UnitTests", "Services\KPService\KP.UnitTests\KP.UnitTests.csproj", "{6AA085AF-EAD1-4CE8-AD10-06DDE431F504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP.IntegrationTest", "Services\KPService\KP.IntegrationTest\KP.IntegrationTest.csproj", "{6EC45CA3-B549-4313-ADFB-45EAF779892D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP.IntegrationTest", "Services\KPService\KP.IntegrationTest\KP.IntegrationTest.csproj", "{6EC45CA3-B549-4313-ADFB-45EAF779892D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F9B6B73D-063D-4410-A95F-3FC593925285}"
 EndProject

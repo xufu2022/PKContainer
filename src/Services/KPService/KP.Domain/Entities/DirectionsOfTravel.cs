@@ -1,9 +1,8 @@
-﻿namespace KP.Domain.Entities
-{
-    public class DirectionsOfTravel : BaseEntity
-    {
-        public string Name { get; set; } = "";
+﻿namespace KP.Domain.Entities;
 
-        public ICollection<Kpi> Kpis { get; set; } = new HashSet<Kpi>();
-    }
+public class DirectionsOfTravel : BaseEntity
+{
+    public string Name { get; set; } = "";
+
+    public ICollection<Kpi> Kpis { get; set; } = new HashSet<Kpi>();
 }

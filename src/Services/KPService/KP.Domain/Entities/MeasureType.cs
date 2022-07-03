@@ -1,9 +1,8 @@
-﻿namespace KP.Domain.Entities
+﻿namespace KP.Domain.Entities;
+
+public partial class MeasureType : BaseEntity
 {
-    public partial class MeasureType : BaseEntity
-    {
 
-        public string Name { get; set; } = "";
+    public string Name { get; set; } = "";
 
-    }
 }
